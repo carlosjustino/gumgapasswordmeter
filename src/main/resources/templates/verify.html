@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>GUMGA - Componente Avaliador de Seguran&ccedil;a</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-grid.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-reboot.min.css" rel="stylesheet" -->
+</head>
+<body>
+<div class="container">
+    <h1>Exemplo de utiliza&ccedil;&atilde;o</h1>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-left lead">
+                    <b>AVALIADOR DE SEGURAN&Ccedil;A DE SENHA</b>
+                </p>
+                <div class="jumbotron">
+                    <div class="form-group col-xs-3">
+                        <input class="form-control"
+                               autocomplete="off"
+                               onchange="verify(this.value)"
+                               type="password"
+                               placeholder="Senha"
+                               name="snh"
+                               id="snh">
+                    </div>
+                    <div class="form-group">
+                        <span class="badge badge-default" id="score"></span>
+                        <span class="badge badge-danger" id="complexity"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="/js/gumga-password-meter.js"></script>
+</body>
+</html>
