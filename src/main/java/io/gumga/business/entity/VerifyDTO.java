@@ -2,13 +2,15 @@ package io.gumga.business.entity;
 
 public class VerifyDTO {
     private String score;
-    private String complexity;
+    private String complexityString;
+    private Complexity complexity;
 
     public VerifyDTO() {
     }
 
-    public VerifyDTO(String score, String complexity) {
+    public VerifyDTO(String score, Complexity complexity) {
         this.score = score;
+        this.complexityString= complexity.getDescricao();
         this.complexity = complexity;
     }
 
@@ -20,11 +22,19 @@ public class VerifyDTO {
         this.score = score;
     }
 
-    public String getComplexity() {
+    public String getComplexityString() {
+        return complexityString;
+    }
+
+    public void setComplexityString(String complexityString) {
+        this.complexityString = complexityString;
+    }
+
+    public Complexity getComplexity() {
         return complexity;
     }
 
-    public void setComplexity(String complexity) {
+    public void setComplexity(Complexity complexity) {
         this.complexity = complexity;
     }
 }

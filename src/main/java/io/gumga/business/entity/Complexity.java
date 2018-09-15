@@ -6,29 +6,31 @@ package io.gumga.business.entity;
  * @author Carlos Eduardo Justino
  */
 public enum Complexity {
-    VERY_WEAK("Muito fraco", 0, 20),
-    WEAK("Fraco", 20, 40),
-    GOOD("Bom", 40, 60),
+    VERY_WEAK("Muito fraca", 0, 20),
+    WEAK("Fraca", 20, 40),
+    GOOD("Boa", 40, 60),
     STRONG("Forte", 60, 80),
     VERY_STRONG("Muito Forte", 80, 101);
 
-    private String name;
+    private String descricao;
     private int min;
     private int max;
 
     Complexity(String name, int min, int max) {
-        this.name = name;
+        this.descricao = name;
         this.min = min;
         this.max = max;
     }
 
-    public static String getComplexity(int score) {
+    public static Complexity getComplexity(int score) {
         for (Complexity c : values()) {
             if (score >= c.min && score < c.max)
-                return c.name;
+                return c;
         }
         return null;
     }
 
-
+    public String getDescricao() {
+        return descricao;
+    }
 }

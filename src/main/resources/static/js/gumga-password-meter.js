@@ -6,9 +6,12 @@ function chkPass(snh) {
         success: function (data) {
             var complexity = $('#complexity');
             $('#score').text(data.score);
-            complexity.text(data.complexity);
+            complexity.text(data.complexityString);
             complexity.removeClass();
             complexity.addClass("badge");
+            if (snh.length <= 3){
+                complexity.text("Muito curta");
+            }
             if (parseInt(data.score) >= 80){
                 complexity.addClass("badge-success");
             }else if (parseInt(data.score) >= 60){
